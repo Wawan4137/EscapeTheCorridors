@@ -1,0 +1,20 @@
+<Tile>:
+    x: self.board.x + self.board.tx + self.col*self.board.tileSize
+    y: self.board.y + self.board.ty + self.row*self.board.tileSize
+
+    canvas:
+        Color: 
+            rgba: 0,0,0,1
+        Rectangle:
+            pos: root.pos
+            size: (root.board.tsize, root.board.tsize)
+        Color:
+            rgba: root.rgba
+        Rectangle:
+            pos: root.x+root.board.margin, root.y+root.board.margin
+            size: root.board.tsize-2*root.board.margin, root.board.tsize-2*root.board.margin
+
+<Board>:
+    tileSize: min((self.width-2*self.tmargin)/self.ncols, (self.height-2*self.tmargin)/self.nrows)
+    tx: (self.width - self.tsize*self.ncols)/2.0
+    ty: (self.height - self.tsize*self.nrows)/2.0
