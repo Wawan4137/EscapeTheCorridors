@@ -18,8 +18,6 @@ class Board(Widget):
     ty = NumericProperty(0)
     margin = NumericProperty(dp(1))
     colors = ListProperty([parse_color(c) for c in COLORS])
-    mode_all = BooleanProperty(False)
-    torus = BooleanProperty(False)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
