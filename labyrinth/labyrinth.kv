@@ -1,9 +1,24 @@
+<Board>:
+    tsize: min((self.width-2*self.hmargin)/self.ncols, (self.height-2*self.wmargin)/self.nrows)
+    tx : (self.width - self.tsize*self.ncols)/2.0
+    ty : (self.height - self.tsize*self.nrows)/2.0
+
+<Tile>:
+    x: self.board.x + self.board.tx + self.col*self.board.tsize 
+    y: self.board.y + self.board.ty + self.row*self.board.tsize
+    canvas:
+        Color: 
+            rgba: 0,0,0,1
+        Rectangle:
+            pos: root.pos
+            size: (root.board.tsize, root.board.tsize)
+        Color:
+            rgba: root.rgba
+        Rectangle:
+            pos: root.x+root.board.tmargin, root.y+root.board.tmargin
+            size: root.board.tsize-2*root.board.tmargin, root.board.tsize-2*root.board.tmargin
+
 BoxLayout:
     orientation: "vertical"
-    canvas:
-        Color:
-            rgba: 166 / 255.0, 117 / 255.0, 32 / 255.0, 1
-        Rectangle: 
-            size : self.size  
-        #Board:
-            #id: board
+    Board:
+        id:board
