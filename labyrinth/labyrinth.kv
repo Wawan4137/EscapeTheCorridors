@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <Tile>:
     x: self.board.x + self.board.tx + self.col*self.board.tileSize
     y: self.board.y + self.board.ty + self.row*self.board.tileSize
@@ -5,12 +6,26 @@
     canvas:
         Color:
             rgba: 1,0,0,1
+=======
+<Board>:
+    tsize: min((self.width-2*self.hmargin)/self.ncols, (self.height-2*self.wmargin)/self.nrows)
+    tx : (self.width - self.tsize*self.ncols)/2.0
+    ty : (self.height - self.tsize*self.nrows)/2.0
+
+<Tile>:
+    x: self.board.x + self.board.tx + self.col*self.board.tsize 
+    y: self.board.y + self.board.ty + self.row*self.board.tsize
+    canvas:
+        Color: 
+            rgba: 0,0,0,1
+>>>>>>> main
         Rectangle:
             pos: root.pos
             size: (root.board.tsize, root.board.tsize)
         Color:
             rgba: root.rgba
         Rectangle:
+<<<<<<< HEAD
             pos: root.x+root.board.margin, root.y+root.board.margin
             size: root.board.tsize-2*root.board.margin, root.board.tsize-2*root.board.margin
 
@@ -18,3 +33,12 @@
     tileSize: min((self.width-2*self.tmargin)/self.ncols, (self.height-2*self.tmargin)/self.nrows)
     tx: (self.width - self.tsize*self.ncols)/2.0
     ty: (self.height - self.tsize*self.nrows)/2.0
+=======
+            pos: root.x+root.board.tmargin, root.y+root.board.tmargin
+            size: root.board.tsize-2*root.board.tmargin, root.board.tsize-2*root.board.tmargin
+
+BoxLayout:
+    orientation: "vertical"
+    Board:
+        id:board
+>>>>>>> main
