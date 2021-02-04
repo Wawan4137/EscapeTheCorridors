@@ -2,4 +2,7 @@ from kivy.uix.image import Image
 from kivy.core.window import Window
 
 class Player(Image):
-    default = 'assets/player.jpg'
+    imagesrc = 'assets/player.png'
+    
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)

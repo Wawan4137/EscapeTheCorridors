@@ -1,5 +1,6 @@
 from kivy.uix.widget import Widget
 from kivy.properties import NumericProperty, ObjectProperty
+from labyrinth.prefabs.default import Default
 
 class Tile(Widget):
     row = NumericProperty(0)
@@ -12,12 +13,16 @@ class Tile(Widget):
 
 
 
-    def __init__(self, i, j, board):
+    def __init__(self, i, j, board, prefab):
         self.row = i
         self.col = j
         self.board = board
+        self.prefab = prefab
         super().__init__()
         self.rgba = self.board.colors[0]
         self.board.add_widget(self)
         #self.prefab = prefab
         #self.state = state
+
+    def addPrefab(self, prefab):
+        self.prefab = prefab

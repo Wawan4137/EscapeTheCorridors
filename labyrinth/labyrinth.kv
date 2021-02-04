@@ -12,11 +12,11 @@
         Rectangle:
             pos: root.pos
             size: (root.board.tsize, root.board.tsize)
-        Color:
-            rgba: root.rgba
-        Rectangle:
-            pos: root.x+root.board.tmargin, root.y+root.board.tmargin
-            size: root.board.tsize-2*root.board.tmargin, root.board.tsize-2*root.board.tmargin
+        
+    Image:
+        pos: root.x+root.board.tmargin, root.y+root.board.tmargin
+        size: root.board.tsize-2*root.board.tmargin, root.board.tsize-2*root.board.tmargin
+        source: root.prefab.imagesrc
 
 BoxLayout:
     orientation: "vertical"
