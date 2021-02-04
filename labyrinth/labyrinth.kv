@@ -22,3 +22,22 @@ BoxLayout:
     orientation: "vertical"
     Board:
         id:board
+    BoxLayout:
+        size_hint_y: None
+        height: sp(50)
+
+        Button:
+            text: "Haut"
+            on_release: print("Haut")
+
+        Button:
+            text: "Bas"
+            on_release: print("Bas")
+
+        Button:
+            text: "Gauche"
+            on_release: print("Gauche")
+
+        Button:
+            text: "Droite"
+            on_release: print("Droite")
