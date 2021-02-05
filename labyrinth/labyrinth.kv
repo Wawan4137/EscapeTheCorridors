@@ -28,16 +28,16 @@ BoxLayout:
 
         Button:
             text: "Haut"
-            on_release: print("Haut")
+            on_release: board.movePlayer("up")
 
         Button:
             text: "Bas"
-            on_release: print("Bas")
+            on_release: board.movePlayer("down")
 
         Button:
             text: "Gauche"
-            on_release: print("Gauche")
+            on_release: board.movePlayer("left")
 
         Button:
             text: "Droite"
-            on_release: print("Droite")
+            on_release: board.movePlayer("right")
