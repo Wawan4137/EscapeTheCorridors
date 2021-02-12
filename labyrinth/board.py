@@ -57,7 +57,7 @@ class Board(Widget):
                         return
 
     def getLevel(self):
-        level = open('labyrinth/levels/levelMove.txt','r')
+        level = open('labyrinth/levels/level4.txt','r')
         matrixPrefabs = [
             [None for j in range(self.ncols)]
             for i in range(self.nrows)
